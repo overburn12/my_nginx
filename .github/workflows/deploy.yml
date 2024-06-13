@@ -35,5 +35,6 @@ jobs:
         passphrase: ${{ secrets.SSH_PASSPHRASE }} 
         script: |
           cd docker
-          docker-compose pull my_nginx
-          docker-compose up -d --no-deps --force-recreate my_nginx
+          docker-compose down
+          docker pull overburn12/my_nginx:latest
+          docker-compose up -d
